@@ -1,6 +1,6 @@
 from smartphone import Smartphone
 
-catalog = ([])
+catalog = []
 
 phone1 = Smartphone("Apple", "15 pro", "+3752926013221")
 phone2 = Smartphone("Samsung", "Galaxy","+3752926013221")
@@ -15,4 +15,4 @@ catalog.append(phone4)
 catalog.append(phone5)
 
 for phone in catalog:
-    print("brand", "model", "number")
+    print(f"{phone.brand} - {phone.model}. {phone.phone_number}")
