@@ -17,13 +17,13 @@ try:
 
     for _ in range(5):
 
-        add_button = chrome. find_element(
+        chrome.find_element(
             By.XPATH, '//button[text()="Add Element"]').click()
-        add_button = firefox. find_element(
+        firefox.find_element(
             By.XPATH, '//button[text()="Add Element"]').click()
         sleep(1)
 
-        chrome_delete_buttons = chrome. find_elements(
+        chrome_delete_buttons = chrome.find_elements(
             "xpath", '//button[text()="Delete"]')
         firefox_delete_buttons = firefox.find_elements(
            "xpath", '//button[text()="Delete"]')        
@@ -37,3 +37,4 @@ except Exception as ex:
 finally:
     chrome.quit()
     firefox.quit()
+    

@@ -12,19 +12,19 @@ firefox = webdriver.Firefox()
 
 try:
     chrome.get("http://the-internet.herokuapp.com/login")
-    input_name = chrome.find_element (By.ID, "username").send_keys("tomsmith")
+    chrome.find_element (By.ID, "username").send_keys("tomsmith")
     firefox.get("http://the-internet.herokuapp.com/login")
-    input_name = firefox.find_element (By.ID, "username").send_keys("tomsmith")
+    firefox.find_element (By.ID, "username").send_keys("tomsmith")
     sleep(1)
 
-    input_pass = chrome.find_element(
+    chrome.find_element(
     By.ID, "password").send_keys("SuperSecretPassword!")
-    input_pass = firefox.find_element(
+    firefox.find_element(
     By.ID, "password").send_keys("SuperSecretPassword!")
     sleep(1)
 
-    button = chrome.find_element(By.TAG_NAME, "button").click()
-    button = firefox.find_element(By.TAG_NAME, "button").click()
+    chrome.find_element(By.TAG_NAME, "button").click()
+    firefox.find_element(By.TAG_NAME, "button").click()
     sleep(2)
 
 except Exception as ex:
@@ -33,3 +33,4 @@ except Exception as ex:
 finally:
     chrome.quit()
     firefox.quit()
+    

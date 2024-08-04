@@ -14,15 +14,15 @@ try:
     chrome.get("http://uitestingplayground.com/dynamicid")
     firefox.get("http://uitestingplayground.com/dynamicid")
 
-    blue_button = chrome.find_element(
+    chrome.find_element(
         "xpath", '//button[text()="Button with Dynamic ID"]').click()
-    blue_button = firefox.find_element(
+    firefox.find_element(
         "xpath", '//button[text()="Button with Dynamic ID"]').click()
 
     for _ in range(3):
-        blue_button = chrome.find_element(
+        chrome.find_element(
         "xpath", '//button[text()="Button with Dynamic ID"]').click()
-        blue_button = firefox.find_element(
+        firefox.find_element(
         "xpath", '//button[text()="Button with Dynamic ID"]').click()
         count = count + 1
         sleep(3)
@@ -34,3 +34,4 @@ except Exception as ex:
 finally:
     chrome.quit()
     firefox.quit()
+    

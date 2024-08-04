@@ -13,14 +13,16 @@ try:
     firefox.get("http://uitestingplayground.com/classattr")
     
     for _ in range(3):
-        blue_button = chrome.find_element(
+          # c h r o m e
+        chrome_button = chrome.find_element(
             "xpath", "//button[contains(concat(' ', normalize-space(@class), ' '), ' btn-primary ')]")
-        blue_button.click()
+        chrome_button.click()
         sleep(2)
         chrome.switch_to.alert.accept()
-        blue_button = firefox.find_element(
+          #f i r e f o x
+        firefox_button = firefox.find_element(
             "xpath", "//button[contains(concat(' ', normalize-space(@class), ' '), ' btn-primary ')]")
-        blue_button.click()
+        firefox_button.click()
         sleep(2)
         firefox.switch_to.alert.accept()
         
@@ -29,3 +31,4 @@ except Exception as ex:
 finally:
     chrome.quit()
     firefox.quit()
+    

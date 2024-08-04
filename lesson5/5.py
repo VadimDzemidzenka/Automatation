@@ -11,28 +11,29 @@ Chrome = webdriver.Chrome()
 Firefox = webdriver.Firefox()
 
 try:
-
+          # c h r o m e
     Chrome.get ("http://the-internet.herokuapp.com/inputs")
-    input_field = Chrome.find_element(By.TAG_NAME, "input")
-    input_field.send_keys("1000")
+    Chrome_input_field = Chrome.find_element(By.TAG_NAME, "input")
+    Chrome_input_field.send_keys("1000")
     print (f"Chrome say 1000")
     sleep(2)
-    input_field.clear()
+    Chrome_input_field.clear()
     print (f"Chrome say DELETE")
     sleep(1)
-    input_field.send_keys("999")
+    Chrome_input_field.send_keys("999")
     print (f"Chrome say 999")
     sleep (2)
-    
+
+          #f i r e f o x
     Firefox.get ("http://the-internet.herokuapp.com/inputs")
-    input_field = Firefox.find_element(By.TAG_NAME, "input")
-    input_field.send_keys("1000")
+    Firefox_input_field = Firefox.find_element(By.TAG_NAME, "input")
+    Firefox_input_field.send_keys("1000")
     print (f"Firefox say 1000")
     sleep(2)
-    input_field.clear()
+    Firefox_input_field.clear()
     print (f"Firefox say DELETE")
     sleep(1)
-    input_field.send_keys("999")
+    Firefox_input_field.send_keys("999")
     print (f"Firefox say 999")
     sleep (2)
 
@@ -41,3 +42,4 @@ except Exception as ex:
 finally:
     Chrome.quit()
     Firefox.quit()
+    
