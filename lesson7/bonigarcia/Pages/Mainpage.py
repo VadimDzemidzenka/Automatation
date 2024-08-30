@@ -1,8 +1,8 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
-from Lesson_7.autoexec import data_type_URL
-from Lesson_7.bonigarcia.data import *
+from lesson7.autoexec import data_type_URL
+from lesson7.bonigarcia.data import *
 
 class Mainpages:
     def __init__(self,browser):

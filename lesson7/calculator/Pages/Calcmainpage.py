@@ -1,7 +1,7 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
-from Lesson_7.autoexec import calculator_URL
+from lesson7.autoexec import calculator_URL
 
 class CalcMain:
     def __init__(self, browser): 

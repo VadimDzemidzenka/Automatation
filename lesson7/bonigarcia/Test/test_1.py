@@ -1,5 +1,5 @@
-from Lesson_7.bonigarcia.Pages.Datafields import DataFild
-from Lesson_7.bonigarcia.Pages.Mainpage import Mainpages
+from lesson7.bonigarcia.Pages.Datafields import DataFild
+from lesson7.bonigarcia.Pages.Mainpage import Mainpages
 
 def test_assertion(chrome_browser):
         main_page = Mainpages(chrome_browser)
