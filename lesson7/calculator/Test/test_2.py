@@ -1,4 +1,4 @@
-from Lesson_7.calculator.Pages.Calcmainpage import CalcMain
+from lesson7.calculator.Pages.Calcmainpage import CalcMain
 
 def test_calculator_assert(chrome_browser):
     calsmain = CalcMain(chrome_browser)
