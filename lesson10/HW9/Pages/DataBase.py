@@ -2,8 +2,8 @@ from sqlalchemy import create_engine, text
 import allure
 
 class DataBase:
-    
-#Словарь 
+    """Класс с действиями БД + Словарь"""
+
     query = {
         "create_company": text('insert into company (name, description) values (:name, :description)'),
         "max_company_id": text("select MAX(id) from company"),
@@ -33,20 +33,20 @@ class DataBase:
                 print("[INFO] DB connection closed")
                 
     @allure.step("Создаем компанию в БД")
-    def create_company(self, company_name: str, description: str):
+    def create_company(self, company_name: str, description: str) -> str:
         return self.execute_query('create_company', {'name': company_name, 'description': description})
     
     @allure.step("Удаляем компанию из БД")
-    def delete(self, company_id: int):
+    def delete(self, company_id: int) -> int:
         return self.execute_query('delete_company', {'company_id': company_id})
     
     @allure.step("Получаем ID последней созданной компании")
-    def last_company_id(self):
+    def last_company_id(self) -> int:
         result = self.execute_query('max_company_id')
         return result.fetchall()[0][0]
     
     @allure.step("Получаем список сотрудников из БД")
-    def get_list_employer(self, company_id: int):
+    def get_list_employer(self, company_id: int) -> int:
         result = self.execute_query('list_SELECT', {'id': company_id})
         return result.fetchall()
     
@@ -55,7 +55,7 @@ class DataBase:
         return self.execute_query('item_INSERT', {'id': company_id, 'name': first_name, 'surname': last_name, 'phone_num': phone})
     
     @allure.step("Получаем ID сотрудника из БД")
-    def get_employer_id(self, company_id: int):
+    def get_employer_id(self, company_id: int) -> int:
         result = self.execute_query('maxID_SELECT', {'c_id': company_id})
         return result.fetchall()[0][0]
     
@@ -64,5 +64,5 @@ class DataBase:
         return self.execute_query('item_UPDATE', {'new_name': new_name, 'employer_id': id})
     
     @allure.step("Удаляем сотрудника из БД")
-    def delete_employer(self, id: int):
+    def delete_employer(self, id: int) -> int:
         return self.execute_query('item_DELETE', {'id_delete': id})
