@@ -51,7 +51,7 @@ class Employer:
         return response
     
     @allure.step("Изменение информации о сотруднике")
-    def change_info(self, token: str, employee_id: int, body: json) -> int:
+    def change_info(self, token: str, employee_id: int, body: json):
         headers = {'x-client-tocen': token}
         response = requests.patch(self.url + path + str(employee_id), headers=headers, json=body)
         return response
